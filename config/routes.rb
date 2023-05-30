@@ -1,23 +1,20 @@
 Rails.application.routes.draw do
   # PART 1: EACH IN ERB
   # ===================
-
-  get("/lottery/lucky", { :controller => "numbers", :action => "winners" })
-  get("/", { :controller => "numbers", :action => "winners" })
-
+  get("/", { :controller => "lottery", :action => "lucky"})
+  get("/lottery/lucky", { :controller => "lottery", :action => "lucky"})
+  get("/lottery/unlucky", { :controller => "lottery", :action => "unlucky"})
   # Let users visit URLs:
-
+  # - /lottery/lucky
   # - /lottery/unlucky
 
-  get("/lottery/unlucky", { :controller => "numbers", :action => "losers" })
-
-  # PART 2: R→C→A→V DEBUGGING
+  # PART 2: RCAV DEBUGGING
   # ======================
 
   # Uncomment each route below ONE AT A TIME and debug.
   # Do NOT uncomment more than one at a time, or you'll be dealing with multiple syntax errors at once.
 
-  get("/zodiacs/aries", { :controller => "fire", :action => "ram" })
+  get("/zodiacs/aries", { :controller =>  "fire", :action =>  "ram" })
   get("/zodiacs/leo", { :controller => "fire", :action => "lion" })
   get("/zodiacs/sagittarius", { :controller => "fire", :action => "archer" })
 
@@ -47,22 +44,46 @@ Rails.application.routes.draw do
   #  - Add some static HTML to mock up the response that you want to send back.
   #  - Write the Ruby to make it dynamic, and work properly.
 
-  get("/roll/1/6", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/2/6", { :controller => "rolling", :action => "roll_2_6"})
-  get("/roll/3/6", { :controller => "rolling", :action => "roll_3_6"})
-  get("/roll/4/6", { :controller => "rolling", :action => "roll_4_6"})
-  get("/roll/5/6", { :controller => "rolling", :action => "roll_5_6"})
-  get("/roll/6/6", { :controller => "rolling", :action => "roll_6_6"})
+  # /roll/1/6
+  # /roll/2/6
+  # /roll/3/6
+  # /roll/4/6
+  # /roll/5/6
+  # /roll/6/6
 
-  get("/roll/1/4", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/2/4", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/3/4", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/4/4", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/1/8", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/2/8", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/1/10", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/2/10", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/1/20", { :controller => "rolling", :action => "roll_1_6"})
-  get("/roll/2/20", { :controller => "rolling", :action => "roll_2_20"})
+  get("/roll/1/6", { :controller => "dice", :action => "one_six" })
+  get("/roll/2/6", { :controller => "dice", :action => "two_six" })
+  get("/roll/3/6", { :controller => "dice", :action => "three_six" })
+  get("/roll/4/6", { :controller => "dice", :action => "four_six" })
+  get("/roll/5/6", { :controller => "dice", :action => "five_six" })
+  get("/roll/6/6", { :controller => "dice", :action => "six_six" })
+
+  # /roll/1/4
+  # /roll/2/4
+  # /roll/3/4
+  # /roll/4/4
+
+  get("/roll/1/4", { :controller => "dice", :action => "one_four" })
+  get("/roll/2/4", { :controller => "dice", :action => "two_four" })
+  get("/roll/3/4", { :controller => "dice", :action => "three_four" })
+  get("/roll/4/4", { :controller => "dice", :action => "four_four" })
+
+  # /roll/1/8
+  # /roll/2/8
+
+  get("/roll/1/8", { :controller => "dice", :action => "one_eight" })
+  get("/roll/2/8", { :controller => "dice", :action => "two_eight" })
+  get("/roll/3/8", { :controller => "dice", :action => "three_eight" })
+
+  # /roll/1/10
+  # /roll/2/10
+
+  get("/roll/1/10", { :controller => "dice", :action => "one_ten" })
+  get("/roll/2/10", { :controller => "dice", :action => "two_ten" })
+  # /roll/1/20
+  # /roll/2/20
+  get("/roll/1/20", { :controller => "dice", :action => "one_twenty" })
+  get("/roll/2/20", { :controller => "dice", :action => "two_twenty" })
+  get("/roll/3/20", { :controller => "dice", :action => "three_twenty" })
 
 end

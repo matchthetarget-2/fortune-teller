@@ -10,13 +10,11 @@ class AirController < ApplicationController
       @array_of_numbers.push(another_number)
     end
 
-    render({ :template => "wind_html/gemini" })
+    render({ :template => "wind_templates/gemini" })
   end
 
   def scales
-    @horoscope = "People close to you might be a bit worried about you, Libra. Too much work and socializing might have you feeling less than your usual self, and perhaps even a little feverish and headachy. If so, this is a good day to take time out, stay home, and rest. Don't worry about sabotaging your success. It will continue. 
-    
-    Take a break and your body will reward you with greater clarity and concentration."
+    @horoscope = "People close to you might be a bit worried about you, Libra. Too much work and socializing might have you feeling less than your usual self, and perhaps even a little feverish and headachy. If so, this is a good day to take time out, stay home, and rest. Don't worry about sabotaging your success. It will continue. Take a break and your body will reward you with greater clarity and concentration."
 
     @array_of_numbers = Array.new
 
@@ -26,7 +24,7 @@ class AirController < ApplicationController
       @array_of_numbers.push(another_number)
     end
 
-    render({ :template => "wind_html/libra" })
+    render({ :template => "wind_templates/libra" })
   end
 
   def waterbearer
@@ -40,6 +38,6 @@ class AirController < ApplicationController
       @array_of_numbers.push(another_number)
     end
 
-    render({ :template => "wind_html/aquarius" })
+    render({ :template => "wind_templates/aquarius" })
   end
 end
